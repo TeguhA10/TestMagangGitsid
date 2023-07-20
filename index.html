@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin: 1rem; padding: 1rem;">
+    <h3>A000124 of Sloane’s OEIS</h3>
+    <label for="input">Input:</label>
+    <input type="number" id="input" min="1" max="100">
+    <button onclick="calculateAndDisplay()">Calculate</button>
+    <p id="output"></p>
+    <h3>Dense Ranking</h3>
+    <p id="output2"></p>
+    <h3> Balanced Bracket</h3>
+    <p id="outputB1"></p>
+    <p id="outputB2"></p>
+    <p id="outputB3"></p>
+    <script>
+        // A000124 of Sloane’s OEIS
+
+        function calculateA000124(n) {
+            let output = "";
+            let current = 0;
+
+            for (let i = 1; i <= n; i++) {
+                current += i;
+                output += current;
+
+                if (i !== n) {
+                    output += "-";
+                }
+            }
+
+            return output;
+        }
+
+        const input = parseInt(document.getElementById("input").value);
+        const output = calculateA000124(input);
+        document.getElementById("output").textContent = "Output: " + output;
+
+        // DENSE RANKING
+
+        function denseRanking(playerScores, gitsScores) {
+            const sortedScores = [...new Set(playerScores)].sort((a, b) => b - a);
+            const rankings = [];
+
+            for (const score of gitsScores) {
+                let rank = 1;
+                for (const playerScore of sortedScores) {
+                    if (score < playerScore) {
+                        rank++;
+                    } else {
+                        break;
+                    }
+                }
+                rankings.push(rank);
+            }
+
+            return rankings;
+        }
+
+        const playerScores = [100, 100, 50, 40, 40, 20, 10];
+        const gitsScores = [5, 25, 50, 120];
+
+        const result = denseRanking(playerScores, gitsScores);
+        console.log(result);
+        document.getElementById("output2").textContent = "Output: " + result;
+
+        // Balanced Bracket
+
+        function isBalancedBracket(s) {
+            const stack = [];
+            const bracketMap = { ')': '(', '}': '{', ']': '[' };
+
+            for (const char of s) {
+                if (bracketMap.hasOwnProperty(char)) {
+                    if (!stack.length || stack[stack.length - 1] !== bracketMap[char]) {
+                        return "NO";
+                    }
+                    stack.pop();
+                } else {
+                    stack.push(char);
+                }
+            }
+
+            return stack.length === 0 ? "YES" : "NO";
+        }
+
+        const sample1 = "{[()]}";
+        const sample2 = "{[(])}";
+        const sample3 = "{(([])[])[]}";
+
+        const hasil1 = isBalancedBracket(sample1);
+        const hasil2 = isBalancedBracket(sample2);
+        const hasil3 = isBalancedBracket(sample3);
+
+        console.log(isBalancedBracket(sample1));
+        console.log(isBalancedBracket(sample2));
+        console.log(isBalancedBracket(sample3));
+
+        document.getElementById("outputB1").textContent = "Output1: " + hasil1;
+        document.getElementById("outputB2").textContent = "Output2: " + hasil2;
+        document.getElementById("outputB3").textContent = "Output3: " + hasil3;
+
+
+    </script>
+</body>
+
+</html>
