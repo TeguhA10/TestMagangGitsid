@@ -11,3 +11,17 @@ Penjelasan detail kompleksitas:
 4. Karena kompleksitas loop `for` adalah O(n), dan operasi lainnya dalam loop adalah konstan, maka kompleksitas keseluruhan dari fungsi `calculateA000124(n)` adalah O(n).
    
 Anda dapat menambahkan penjelasan di README Repo dengan menggambarkan bagaimana kompleksitas kodingan dihitung dan mengapa kompleksitasnya adalah O(n). Ini akan membantu pembaca untuk memahami performa kodingan Anda dan bagaimana kompleksitasnya berkembang seiring dengan perubahan nilai input `n`.
+
+# Output Hasil Program
+
+//  A000124 of Sloane’s OEIS
+
+![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Sloane's%20OEIS.PNG?raw=true)
+
+// Dense Ranking
+
+![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Dense%20Ranking.PNG?raw=true)
+
+// Balanced Bracket
+
+![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Balanced%20Brecket.PNG?raw=true)
