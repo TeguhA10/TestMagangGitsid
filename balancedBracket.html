@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Balanced Bracket</h3>
+    <p id="outputB1"></p>
+    <p id="outputB2"></p>
+    <p id="outputB3"></p>
+    
+    <script>
+        
+        // Balanced Bracket
+
+        function isBalancedBracket(s) {
+            const stack = [];
+            const bracketMap = { ')': '(', '}': '{', ']': '[' };
+
+            for (const char of s) {
+                if (bracketMap.hasOwnProperty(char)) {
+                    if (!stack.length || stack[stack.length - 1] !== bracketMap[char]) {
+                        return "NO";
+                    }
+                    stack.pop();
+                } else {
+                    stack.push(char);
+                }
+            }
+
+            return stack.length === 0 ? "YES" : "NO";
+        }
+
+        const sample1 = "{[()]}";
+        const sample2 = "{[(])}";
+        const sample3 = "{(([])[])[]}";
+
+        const hasil1 = isBalancedBracket(sample1);
+        const hasil2 = isBalancedBracket(sample2);
+        const hasil3 = isBalancedBracket(sample3);
+
+        console.log(isBalancedBracket(sample1));
+        console.log(isBalancedBracket(sample2));
+        console.log(isBalancedBracket(sample3));
+
+        document.getElementById("outputB1").textContent = "Output1: " + hasil1;
+        document.getElementById("outputB2").textContent = "Output2: " + hasil2;
+        document.getElementById("outputB3").textContent = "Output3: " + hasil3;
+
+    </script>
+</body>
+</html>

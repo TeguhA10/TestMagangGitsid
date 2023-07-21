@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin: 1rem; padding: 1rem;">
+    <h3>A000124 of Sloane’s OEIS</h3>
+    <label for="input">Input:</label>
+    <input type="number" id="input" min="1" max="100">
+    <button onclick="calculateAndDisplay()">Calculate</button>
+    <p id="output"></p>
+
+    <script>
+        // A000124 of Sloane’s OEIS
+
+        function calculateA000124(n) {
+            let output = "";
+            let current = 0;
+
+            for (let i = 1; i <= n; i++) {
+                current += i;
+                output += current;
+
+                if (i !== n) {
+                    output += "-";
+                }
+            }
+
+            return output;
+        }
+
+        function calculateAndDisplay() {
+            const input = parseInt(document.getElementById("input").value);
+            const output = calculateA000124(input);
+            document.getElementById("output").textContent = "Output: " + output;
+        }
+
+
+    </script>
+</body>
+
+</html>

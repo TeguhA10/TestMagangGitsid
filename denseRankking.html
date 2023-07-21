@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Dense Ranking</h3>
+    <p id="output2"></p>
+    
+    <script>
+        // DENSE RANKING
+
+        function denseRanking(playerScores, gitsScores) {
+            const sortedScores = [...new Set(playerScores)].sort((a, b) => b - a);
+            const rankings = [];
+
+            for (const score of gitsScores) {
+                let rank = 1;
+                for (const playerScore of sortedScores) {
+                    if (score < playerScore) {
+                        rank++;
+                    } else {
+                        break;
+                    }
+                }
+                rankings.push(rank);
+            }
+
+            return rankings;
+        }
+
+        const playerScores = [100, 100, 50, 40, 40, 20, 10];
+        const gitsScores = [5, 25, 50, 120];
+
+        const result = denseRanking(playerScores, gitsScores);
+        console.log(result);
+        document.getElementById("output2").textContent = "Output: " + result;
+    </script>
+</body>
+
+</html>
