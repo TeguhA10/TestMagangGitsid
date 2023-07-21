@@ -14,14 +14,14 @@ Anda dapat menambahkan penjelasan di README Repo dengan menggambarkan bagaimana 
 
 # Output Hasil Program
 
-//  A000124 of Sloane’s OEIS
+1.  A000124 of Sloane’s OEIS
 
 ![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Sloane's%20OEIS.PNG?raw=true)
 
-// Dense Ranking
+2. Dense Ranking
 
 ![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Dense%20Ranking.PNG?raw=true)
 
-// Balanced Bracket
+3. Balanced Bracket
 
 ![alt text](https://github.com/TeguhA10/TestMagangGitsid/blob/main/output/Balanced%20Brecket.PNG?raw=true)
