@@ -9,8 +9,6 @@ Penjelasan detail kompleksitas:
 2. Di dalam loop, ada beberapa operasi konstan, seperti penambahan `i` ke variabel `current`, dan penggabungan nilai `current` ke dalam variabel `output`.
 3. Operasi lainnya yang dilakukan di dalam loop adalah pengujian jika nilai `i` bukanlah `n`, untuk menambahkan tanda "-" pada output. Namun, operasi ini juga berjalan sebanyak `n-1` kali, karena hanya diterapkan untuk nilai `i` dari 1 hingga `n-1`.
 4. Karena kompleksitas loop `for` adalah O(n), dan operasi lainnya dalam loop adalah konstan, maka kompleksitas keseluruhan dari fungsi `calculateA000124(n)` adalah O(n).
-   
-Anda dapat menambahkan penjelasan di README Repo dengan menggambarkan bagaimana kompleksitas kodingan dihitung dan mengapa kompleksitasnya adalah O(n). Ini akan membantu pembaca untuk memahami performa kodingan Anda dan bagaimana kompleksitasnya berkembang seiring dengan perubahan nilai input `n`.
 
 # Output Hasil Program
 
